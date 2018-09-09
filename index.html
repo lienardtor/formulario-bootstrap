@@ -1,0 +1,105 @@
+<html lang="es">
+<head>
+<!-- Permite caracteres Unicode en lenguaje español, incluyendo acentos y eñes-->
+	<meta charset="UTF-8">
+</head>
+<!-- Llamadas a bootstrap y jquery en la nube-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<!-- CSS local-->
+<link href="form-css-local.css" rel="stylesheet">
+
+<section class="footer-form padding-top-xl padding-bottom-xl" aria-label="Formulario de Contacto">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 section5 text-center">
+          <h2 class="h1 font-w200">Formulario Bootstrap</h2>
+          <p class="margin-top-m margin-bottom-m">Colocar aquí el objetivo del formulario u otra información relevante.</p>
+        </div>
+      </div><!-- fin row-->          
+      <div class="row">
+		<!-- inicio tabla-->
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		  <!-- inicio form-->	
+          <form name="contentForm" enctype="multipart/form-data" method="" action="" role="form" data-toggle="validator" novalidate="true">
+			  <div class="form schedule-assessment">
+				<div class="row margin-top-l">
+					<div class="form-group col-md-6">
+					  <label for="nombre" class="sr-only">Tu Nombre: </label>
+					  <input name="nombre" id="nombre" placeholder="Nombre Completo" type="text" value="" required="required" data-error="Por favor, incluye tu nombre.">
+					  <div class="help-block with-errors"></div>
+					</div><!-- fin col-->  
+					<div class="form-group col-md-6">
+					  <label for="telefono" class="sr-only">Tu Teléfono: </label>
+					  <input name="telefono" id="telefono" placeholder="Teléfono" type="text" value="" required="required" data-error="Por favor, incluye tu teléfono." maxlength="12" onKeyPress="return SoloNumeros(event);" >
+					  <div class="help-block with-errors"></div>
+					</div><!-- fin col-->
+				</div><!-- fin row-->
+				<div class="row">
+					<div class="form-group col-md-6">
+					  <label for="email" class="sr-only">Tu Email: </label>
+					  <input name="email" id="email" placeholder="Email" type="email" value="" required="required" data-error="Por favor, incluye tu email.">
+					  <div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group col-md-6">
+					  <label for="motivos" class="sr-only">¿Cuál es el motivo de tu contacto? </label>
+					  <select name="motivos" required="required" data-error="Por favor, seleccione una opción.">
+						  <option value="">Seleccione</option>
+						  <option value="Administración">Administración</option>
+						  <option value="Operaciones">Operaciones</option>
+						  <option value="Servicios">Servicios</option>
+						  <option value="Atención al Cliente">Atención al Cliente</option>
+						  <option value="Ventas">Ventas</option>
+					  </select>
+					  <div class="help-block with-errors"></div>
+					</div>
+				</div><!-- fin row-->
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label>¿Quiere recibir nuestro catálogo?</label>
+						<div class="radio">
+							<label>
+							<input type="radio" name="catalogo" value="si" required checked="true">
+							¡Sí claro!
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+							<input type="radio" name="catalogo" value="no" required>
+							No Gracias.
+							</label>
+						</div>
+					</div>
+				</div><!-- fin row-->
+				<div class="form-group text-center">
+					<input class="submit center-block btn btn-primary" value="Enviar" type="submit">
+				</div>
+          </div><!-- fin form-->
+        </div><!-- fin tabla-->
+      </div><!-- fin row-->
+    </div><!-- fin container-->
+  </div><!-- fin wrapper-->
+</section>
+
+<script>
+//Se utiliza para que el campo de texto solo acepte numeros
+function SoloNumeros(evt){
+ if(window.event){//asignamos el valor de la tecla a keynum
+  keynum = evt.keyCode; //IE
+ }
+ else{
+  keynum = evt.which; //FF
+ } 
+ //comprobamos si se encuentra en el rango numérico y que teclas no recibirá.
+ if((keynum > 47 && keynum < 58) || keynum == 8 || keynum == 13 || keynum == 6 ){
+  return true;
+ }
+ else{
+  return false;
+ }
+}
+</script>	
+</html>
